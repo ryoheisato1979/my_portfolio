@@ -1,0 +1,521 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="robots" content="noindex,nofollow" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta
+      name="description"
+      content="ryohei_satoのポートフォリオです。HTML CSS JavaScript jQuery PHP Illustrator Photoshop"
+    />
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/reset.css" />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="css/iziModal.css"
+      media="screen"
+    />
+    <link rel="stylesheet" href="css/style.css" />
+    <script
+      src="https://kit.fontawesome.com/6c845a5a9e.js"
+      crossorigin="anonymous"
+    ></script>
+
+    <title>Portfolio</title>
+  </head>
+
+  <body>
+    <header class="header js-float-menu">
+      <h1 class="header__title">My Portfolio</h1>
+
+      <!-- スマホ用メニュー -->
+      <div class="menu-trigger js-toggle-sp-menu">
+        <span class="menu-trigger__barger"></span>
+        <span class="menu-trigger__barger"></span>
+        <span class="menu-trigger__barger"></span>
+      </div>
+      <nav class="nav js-toggle-sp-menu-target">
+        <ul class="nav__menu">
+          <li class="nav__menu-item">
+            <a href="#top" class="nav__menu-link">TOP</a>
+          </li>
+          <li class="nav__menu-item">
+            <a href="#profile" class="nav__menu-link">Profile</a>
+          </li>
+          <li class="nav__menu-item">
+            <a href="#skill" class="nav__menu-link">Skills</a>
+          </li>
+          <li class="nav__menu-item">
+            <a href="#work" class="nav__menu-link">Works</a>
+          </li>
+          <li class="nav__menu-item">
+            <a href="#contact" class="nav__menu-link">Contact</a>
+          </li>
+        </ul>
+      </nav>
+    </header>
+
+    <main class="main">
+      <!-- ヒーローバナー -->
+      <section class="hero" id="top">
+        <div class="hero__text">
+          Welcome to<br />
+          <div class="hero__title">
+            My Portfolio
+          </div>
+          <div class="hero__name">
+            Designed and produced by Ryohei Sato.
+          </div>
+        </div>
+      </section>
+
+      <!-- profile -->
+      <section class="profile" id="profile">
+        <!-- タイトル・profile -->
+        <div class="section-title">
+          <h1 class="section-title__title">Profile</h1>
+        </div>
+
+        <div class="profile__container fadein">
+          <div class="profile__img"><img src="img/image.png" alt="" /></div>
+          <div class="profile__group">
+            <div class="profile__unit">
+              <div class="profile__label">
+                名　前 <span class="txt-hide"> -Name-</span>
+              </div>
+              <div class="profile__item">
+                佐藤 亮平<span class="txt-hide">（さとうりょうへい）</span>
+              </div>
+            </div>
+            <div class="profile__unit">
+              <div class="profile__label">
+                誕生日<span class="txt-hide"> -Date of birth-</span>
+              </div>
+              <div class="profile__item">1979年08月18日（40歳）</div>
+            </div>
+            <div class="profile__unit">
+              <div class="profile__label">
+                居住地<span class="txt-hide"> -Address-</span>
+              </div>
+              <div class="profile__item">福島県いわき市</div>
+            </div>
+            <div class="profile__unit">
+              <div class="profile__label">
+                家　族<span class="txt-hide"> -Family-</span>
+              </div>
+              <div class="profile__item">
+                妻：長女<span class="txt-hide">（6歳）</span>：長男<span
+                  class="txt-hide"
+                  >（2歳）</span
+                >
+              </div>
+            </div>
+            <div class="profile__text">
+              専門学校卒業後、DTPデザイナーとして勤務してチラシやDMのデザインを手掛けていました。
+              現職では現場リーダー（マネジメント）、生産管理、工程管理、品質管理と幅広い仕事を任せていただいております。
+              2019年5月からプログラミングの勉強をはじめ、
+              以前より興味のあったフロントエンドエンジニアを目指し勉強を継続しています。
+              学習内容や学習時間は毎日Twitterにて報告しています。<br />
+              <!-- デザインで人と人が繋がりあい、認めあい、信頼しあい、助けあう。そんな関係が気づけるような提案をしていきたいと考えています。<br /> -->
+            </div>
+          </div>
+        </div>
+
+        <!-- タイトル・Skills -->
+        <div class="skill" id="skill">
+          <div class="section-title">
+            <div class="section-title__border"></div>
+            <h1 class="section-title__title">Skills</h1>
+          </div>
+
+          <div class="skill__container fadein">
+            <div class="skill__group">
+              <!-- HTML -->
+              <div class="skill__unit">
+                <div class="skill__icon bg-color1">
+                  <i class="fab fa-html5"></i>
+                </div>
+                <div class="skill__text-box">
+                  <h3 class="text-box__heading">HTML/CSS</h3>
+                  <div class="text-box__desc">
+                    <p>
+                      ページの構造、どういうスタイルを当てていくのか、おおよその予測がつきます。
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <!--skill__unit -->
+
+              <!-- JavaScript -->
+              <div class="skill__unit">
+                <div class="skill__icon bg-color2">
+                  <i class="fab fa-js-square"></i>
+                </div>
+                <div class="skill__text-box">
+                  <h3 class="text-box__heading">JavaScript</h3>
+                  <div class="text-box__desc">
+                    <p>
+                      よく使われる基本的な動きをサイトに付与することができます。(jQuery含む)
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <!--skill__unit -->
+
+              <!-- PHP -->
+              <div class="skill__unit">
+                <div class="skill__icon bg-color3">
+                  <i class="fab fa-php"></i>
+                </div>
+                <div class="skill__text-box">
+                  <h3 class="text-box__heading">PHP</h3>
+                  <div class="text-box__desc">
+                    <p>
+                      フレームワークを使用せずにCRUD処理、メール送信、掲示板機能などを実装できます。
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <!--skill__unit -->
+
+              <!-- WordPress -->
+              <div class="skill__unit">
+                <div class="skill__icon bg-color4">
+                  <i class="fab fa-wordpress"></i>
+                </div>
+                <div class="skill__text-box">
+                  <h3 class="text-box__heading">WordPress</h3>
+                  <div class="text-box__desc">
+                    <p>
+                      簡易的なオリジナルテーマ作成、既存ホームページのWordPress化に対応可能です。
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <!--skill__unit -->
+
+              <!-- Illustrator -->
+              <div class="skill__unit">
+                <div class="skill__icon bg-color5">
+                  <i class="fab fa-adobe"></i>
+                </div>
+                <div class="skill__text-box">
+                  <h3 class="text-box__heading">Illustrator</h3>
+                  <div class="text-box__desc">
+                    <p>
+                      DTP(チラシ、DMなど）の制作ができます。おおよその機能は理解しています。実務経験５年。
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <!--skill__unit -->
+
+              <!-- Photoshop -->
+              <div class="skill__unit">
+                <div class="skill__icon bg-color6">
+                  <i class="fab fa-adobe"></i>
+                </div>
+                <div class="skill__text-box">
+                  <h3 class="text-box__heading">PhotoShop</h3>
+                  <div class="text-box__desc">
+                    <p>
+                      写真の加工、色彩調整、切り抜き作業等ができます。おおよその機能は理解しています。実務経験５年。
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <!--skill__unit -->
+            </div>
+            <!-- skill__group-->
+          </div>
+          <!-- skill__container-->
+        </div>
+        <!-- skill -->
+      </section>
+
+      <!-- Work -->
+
+      <section class="works">
+        <!-- タイトル・Work -->
+        <div class="section-title" id="works">
+          <div class="section-title__border"></div>
+          <h1 class="section-title__title">Works</h1>
+        </div>
+
+        <div class="works__container fadein">
+          <!-- ここから -->
+
+          <div class="works__items">
+            <div class="works__item">
+              <img src="img/work02.png" data-izimodal-open=".modal_01" alt="" />
+            </div>
+            <div class="works__item">
+              <img src="img/work03.png" data-izimodal-open=".modal_02" alt="" />
+            </div>
+          </div>
+          <div class="works__items">
+            <div class="works__item">
+              <img src="img/work04.png" data-izimodal-open=".modal_03" alt="" />
+            </div>
+          </div>
+          <!-- ここまで -->
+        </div>
+      </section>
+
+      <!-- Contact -->
+      <section class="contact" id="contact">
+        <!-- タイトル・Contact -->
+        <div class="section-title" id="contact">
+          <div class="section-title__border"></div>
+          <h1 class="section-title__title">Contact</h1>
+        </div>
+
+        <div class="contact__container fadein">
+          <p class="contact__heading">
+            下記メールアドレスまでご連絡ください。<br />
+            ご依頼の方はお気軽にお問い合わせください。
+          </p>
+          <form action="./mail.php" method="post" class="contact__form">
+            <div class="contact__form-group">
+              <label for="name" class="contact__form-label"
+                >お名前 <span class="contact__form-label--required">必須</span>
+              </label>
+              <input
+                type="text"
+                name="name"
+                id="name"
+                class="contact__form-input js-valid-name"
+              />
+              <span class="contact__form-alert"></span>
+            </div>
+
+            <div class="contact__form-group">
+              <label for="email" class="contact__form-label"
+                >メールアドレス
+                <span class="contact__form-label--required">必須</span>
+              </label>
+
+              <input
+                type="text"
+                name="email"
+                id="email"
+                class="contact__form-input js-valid-email"
+              />
+              <span class="contact__form-alert"></span>
+            </div>
+
+            <div class="contact__form-group">
+              <label for="tel" class="contact__form-label">電話番号</label>
+              <input
+                type="text"
+                name="tel"
+                id="tel"
+                class="contact__form-input"
+              />
+            </div>
+
+            <div class="contact__form-group">
+              <label for="content" class="contact__form-label"
+                >お問い合わせ内容
+                <span class="contact__form-label--required">必須</span>
+              </label>
+              <textarea
+                class="contact__form-textArea js-valid-txt js-count-txt"
+                id="content"
+                name="content"
+              ></textarea>
+              <span class="contact__form-alert"></span>
+            </div>
+
+            <input
+              type="submit"
+              class="contact__form-btn"
+              name="send"
+              value="内容を送信する"
+            />
+          </form>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div class="footer__sns fadein">
+        <span class="footer__title"
+          ><a href="https://twitter.com/SatohappyRyohei"
+            >Follow me us on Twitter.</a
+          ></span
+        >
+        <span class="footer__logo"
+          ><a href="https://twitter.com/SatohappyRyohei"
+            ><i class="fab fa-twitter"></i></a
+        ></span>
+        <small class="footer__copy"
+          >© 2020 ryohei_sato All rights reserved.</small
+        >
+      </div>
+    </footer>
+
+    <!-- Modal -->
+    <div
+      class="iziModal_group modal_01"
+      data-izimodal-title="仮想WEBサービス"
+      data-izimodal-headerColor="#000"
+      data-izimodal-width="80vw"
+    >
+      <div class="modal__container">
+        <div class="modal__image">
+          <!-- <a href="contents/01-counter/"> -->
+          <img class="modal__img" src="img/work02.png" />
+          <!-- </a> -->
+        </div>
+        <div class="modal__info">
+          <div class="modal__item">
+            <div class="modal__label">使用言語</div>
+            <div class="modal__text">HTML / CSS / PHP / MySQL</div>
+          </div>
+          <div class="modal__item">
+            <div class="modal__label">内容</div>
+            <div class="modal__text">
+              ユーザー登録、編集、更新、退会、ログイン、ログアウト、パスワードリマインダー機能、写真登録、検索機能、メール送信など<br />
+              写真を登録するWEBサービスを作成しました。
+              PHPやmysqlを使用しDBへの接続、登録、テーブル結合などができるようになりました。
+            </div>
+          </div>
+          <div class="modal__item">
+            <div class="modal__label">サイトリンク & GitHub</div>
+            <div class="modal__text">
+              サイトリンク :
+              <a href="http://satoryo.net/doubutsu/index.php"
+                >http://satoryo.net/doubutsu/index.html</a
+              >
+            </div>
+            <div class="modal__text">
+              GitHub :
+              <a href="https://github.com/ryoheisato1979/web_service_output"
+                >https://github.com/ryoheisato1979/web_service_output</a
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div
+      class="iziModal_group modal_02"
+      data-izimodal-title="ブラウザゲーム"
+      data-izimodal-headerColor="#000"
+      data-izimodal-width="80vw"
+    >
+      <div class="modal__container">
+        <div class="modal__image">
+          <!-- <a href="contents/01-counter/"> -->
+          <img class="modal__img" src="img/work03.png" />
+          <!-- </a> -->
+        </div>
+        <div class="modal__info">
+          <div class="modal__item">
+            <div class="modal__label">使用言語</div>
+            <div class="modal__text">HTML / CSS / PHP</div>
+          </div>
+          <div class="modal__item">
+            <div class="modal__label">内容</div>
+            <div class="modal__text">
+              オブジェクト指向プログラミングを理解するために、ブラウザ上で動くゲーム「どうぶつゲット」を作成しました。<br />
+              つかまえる、にげる、まもる、リスタートの4つの行動ができます。
+              <br />
+              敵を倒したら「つかまえたどうぶつ」がカウントアップします。
+              また、「にげる」を選択した場合、ランダムに逃げられないそして敵からの攻撃だけを受けてしまうような設定にしました。
+            </div>
+          </div>
+          <div class="modal__item">
+            <div class="modal__label">サイトリンク & GitHub</div>
+            <div class="modal__text">
+              サイトリンク :
+              <a href="http://satoryo.net/doubutsu/index.php"
+                >http://satoryo.net/doubutsu/index.php</a
+              >
+            </div>
+            <div class="modal__text">
+              GitHub :
+              <a href="https://github.com/ryoheisato1979/doubutsu"
+                >https://github.com/ryoheisato1979/doubutsu</a
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div
+      class="iziModal_group modal_03"
+      data-izimodal-title="WEBサイト模写"
+      data-izimodal-headerColor="#000"
+      data-izimodal-width="80vw"
+    >
+      <div class="modal__container">
+        <div class="modal__image">
+          <!-- <a href="contents/01-counter/"> -->
+          <img class="modal__img" src="img/work04.png" />
+          <!-- </a> -->
+        </div>
+        <div class="modal__info">
+          <div class="modal__item">
+            <div class="modal__label">使用言語</div>
+            <div class="modal__text">HTML / CSS（Sass）</div>
+          </div>
+          <div class="modal__item">
+            <div class="modal__label">内容</div>
+            <div class="modal__text">
+              BEMや、FLOCSSのCSS設計を使いコーディングしました。<br />
+              Sassを使用して無駄のないコーディングを心がけ、CSS設計についての理解を深めました。
+            </div>
+          </div>
+          <div class="modal__item">
+            <div class="modal__label">サイトリンク & GitHub</div>
+            <div class="modal__text">
+              サイトリンク :
+              <a href=""></a>
+            </div>
+            <div class="modal__text">
+              GitHub :
+              <a href="https://github.com/ryoheisato1979/responsive"
+                >https://github.com/ryoheisato1979/responsive</a
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script
+      src="https://code.jquery.com/jquery-3.3.1.min.js"
+      integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+      crossorigin="anonymous"
+    ></script>
+    <script type="text/javascript" src="js/iziModal.js"></script>
+    <script type="text/javascript">
+      $(function () {
+        $(".modal_01").iziModal({
+          group: "group01",
+          loop: true,
+        });
+        $(".modal_02").iziModal({
+          group: "group01",
+          loop: true,
+        });
+        $(".modal_03").iziModal({
+          group: "group01",
+          loop: true,
+        });
+        $(".modal_04").iziModal({
+          group: "group01",
+          loop: true,
+        });
+      });
+    </script>
+
+    <script src="js/app.js"></script>
+  </body>
+</html>

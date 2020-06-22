@@ -1,0 +1,698 @@
+// フォントカラー
+$font-color_default: rgb(33, 33, 33);
+$font-color_hover: #dcdcdc;
+$font-color_alert: rgb(255, 0, 0);
+$font-color_icon: rgb(255, 255, 255);
+
+// $color_corp: #e3a8b1;
+// $font-color_sub1: #b6a489;
+
+// バックグラウンドカラー
+// $bgColor_default: #a3b5c0;
+$bgColor_default: #ffffec;
+// $bgColor_basecolor: #f9fccf;
+$bgColor_basecolor: #d0d096;
+$bgColor_basecolor: #fcfc9d;
+$bgColor_label: #ededed;
+$bgColor_required: #ff0000;
+$bgColor_shadow: #ebebeb;
+$bgColor_icon1: #e0b2e0;
+$bgColor_icon2: #ffee8b;
+$bgColor_icon3: #ceabd8;
+$bgColor_icon4: #a2c2d4;
+$bgColor_icon5: #ffd06b;
+$bgColor_icon6: #ff6b6b;
+
+// 横幅
+$site-width: 90vw;
+$site-width_main: 70vw;
+$site-width_sub1: 50vw;
+$site-width_sub2: 40vw;
+$site-width_btn: 25vw;
+$site-width_footer: 100vw;
+$site-width_prof: 15rem;
+$site-width_icon: 7rem;
+
+// 縦幅
+$site-height: 4rem;
+$site-height_sub: 30vw;
+$site-height_sub2: 15vw;
+$site-height_icon: 7rem;
+$site-height_hero: 100vh;
+
+// フォントサイズ
+$font-size_s: 0.75rem;
+$font-size_m: 0.875rem;
+$font-size_default: 1rem;
+$font-size_l: 1.125rem;
+$font-size_xl: 1.5rem;
+$font-size_xxl: 1.75rem;
+$font-size_3l: 2rem;
+$font-size_icon: 5.5em;
+
+// 余白・文字間隔
+$space_ss: 0.1875rem;
+$space_s: 0.3125rem;
+$space_m: 0.625rem;
+$space_l: 0.9375rem;
+$space_xl: 1.25rem;
+$space_xxl: 1.75rem;
+$space_3l: 2.5rem;
+$space_4l: 3.125rem;
+$space_5l: 3.75rem;
+$space_6l: 4.375rem;
+$space_7l: 5rem;
+$space_8l: 5.625rem;
+$space_9l: 6.25rem;
+$space_10l: 7rem;
+$space_title: 9rem;
+// フォントファミリー
+$font-family_default: "ヒラギノ角ゴシック Pro", "Average", "Caladea",
+  "Hiragino Kaku Gothic ProN", Helvetica, Quicksand, 游ゴシック体, "Yu Gothic",
+  YuGothic, "ヒラギノ角ゴシック Pro", "Hiragino Kaku Gothic Pro", メイリオ,
+  Meiryo, Osaka, "ＭＳ Ｐゴシック", "MS PGothic", sans-serif;
+$font-family_title: "Josefin Slab", "Jura";
+
+// 'Hiragino Kaku Gothic ProN', Meiryo, sans-serif;
+// メディアクエリのブレークポイント設定
+
+// @media screen and (max-width: 414px){
+//   .btn{
+//     font-size: .7em;
+//   }
+// }
+
+// 通常、変数として設定しておくと後々変更しやすくて便利
+//  !defaultはすでに変数に値が入っていた場合は何もせず、変数に値が入っていない時に割り当てられるもの
+// https://hail2u.net/blog/webdesign/how-to-use-bang-default-flag-in-sass-and-how-it-works.html
+//$breakpoint-sm: 400px !default;
+//$breakpoint-md: 768px !default;
+//$breakpoint-lg: 1000px !default;
+
+// マップ型変数を使うと便利
+$breakpoints: (
+  "sm": "screen and (max-width: 414px)",
+  "md": "screen and (max-width: 768px)",
+  "lg": "screen and (max-width: 1000px)",
+  "xl": "screen and (max-width: 1200px)",
+  "xxl": "screen and (max-width: 1400px)",
+) !default;
+
+// ==============================
+// mixin
+// ==============================
+// @mixinは関数のようなものを作れる
+// https://www.webcreatorbox.com/tech/sass-mixin
+// map-get()の第一引数に変数名、第二引数にマップ型のキーを渡すと、マップ型の値が返る
+// #{}は「インターポーレーション」といって、演算できない箇所、変数使えない箇所でも使えるようにするものcalcなどでよく使う
+// http://book.scss.jp/code/c4/08.html
+@mixin mq($breakpoint: sm) {
+  @media #{map-get($breakpoints, $breakpoint)} {
+    @content;
+  }
+}
+
+@mixin mq($breakpoint: md) {
+  @media #{map-get($breakpoints, $breakpoint)} {
+    @content;
+  }
+}
+
+@mixin mq($breakpoint: lg) {
+  @media #{map-get($breakpoints, $breakpoint)} {
+    @content;
+  }
+}
+
+@mixin mq($breakpoint: xl) {
+  @media #{map-get($breakpoints, $breakpoint)} {
+    @content;
+  }
+}
+
+body {
+  font-family: $font-family_default;
+  color: $font-color_default;
+}
+// ヘッダー
+// @import "header";
+
+.header {
+  font-family: $font-family_title;
+  position: fixed;
+  z-index: 1;
+  height: $site-height;
+  align-items: center;
+  display: flex;
+  box-sizing: border-box;
+  justify-content: space-between;
+  background-color: rgba(255, 255, 255, 0.2);
+  padding: 0 10% 0 10%;
+  width: 100vw;
+  &__title {
+    font-size: $font-size_3l;
+    text-shadow: 0 0 20px #ffe2af;
+    transition: all 2s;
+    &:hover {
+      color: #ffe2af;
+      transition: all 2s;
+    }
+  }
+  &.active {
+    transition: 0.5s;
+    transform: translateX(-100%);
+    z-index: 2;
+  }
+}
+
+// ==================================
+// menu
+// ==================================
+.nav {
+  @include mq(md) {
+    display: block;
+    position: absolute;
+    top: 0;
+    right: -100%;
+    background: rgba(255, 255, 255, 0.85);
+    width: 100%;
+    height: 100vh;
+    padding-top: 50px;
+    transition: 0.5s;
+    &.active {
+      transition: 0.5s;
+      transform: translateX(-100%);
+      z-index: 2;
+    }
+    &.active2 {
+      transition: 0.5s;
+      transform: translateX(100%);
+      z-index: 2;
+    }
+  }
+  &__menu {
+    display: flex;
+    align-items: center;
+    @include mq(md) {
+      flex-direction: column;
+      margin-top: $space_4l;
+      line-height: 5rem;
+    }
+  }
+  &__menu-item {
+    margin-right: $space_4l;
+  }
+  &__menu-link {
+    -webkit-font-smoothing: initial;
+    text-decoration: none;
+    color: $font-color_default;
+    font-size: $font-size_m;
+    &:hover {
+      color: $font-color_hover;
+      // text-shadow: 0 0 5rem #fcfc9d;
+      transition: all 0.5s;
+    }
+  }
+}
+
+.menu-trigger {
+  display: none;
+  @include mq(md) {
+    display: inline-block;
+  }
+  transition: all 0.4s;
+  box-sizing: border-box;
+  position: relative;
+  width: 40px;
+  height: 32px;
+  z-index: 3;
+  &__barger {
+    display: inline-block;
+    transition: all 0.4s;
+    box-sizing: border-box;
+    position: absolute;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    background-color: $font-color_default;
+    border-radius: 4px;
+    &:nth-of-type(1) {
+      top: 0;
+    }
+    &:nth-of-type(2) {
+      top: 14px;
+    }
+    &:nth-of-type(3) {
+      bottom: 0;
+    }
+  }
+  &.active span {
+    &:nth-of-type(1) {
+      transform: translateY(12px) rotate(-45deg);
+    }
+    &:nth-of-type(2) {
+      opacity: 0;
+    }
+    &:nth-of-type(3) {
+      transform: translateY(-15px) rotate(45deg);
+    }
+  }
+}
+
+// main
+.main {
+  margin: 0 auto;
+}
+// ヒーロバナー
+.hero {
+  font-family: $font-family_title;
+  background-image: url("../img/book-731199_1920.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  &__text {
+    text-align: center;
+    font-size: $font-size_xxl;
+    text-shadow: 0 0 1rem rgb(255, 255, 255);
+  }
+  &__title {
+    margin-top: 2rem;
+    font-size: 5rem;
+    text-shadow: 0 0 1rem rgb(255, 229, 162);
+    transition: all 3s;
+    &:hover {
+      color: #ffe2af;
+      transition: all 2s;
+    }
+  }
+  &__name {
+    margin-top: 2rem;
+    font-size: 1rem;
+  }
+}
+
+// セクションタイトル
+.section-title {
+  &__border {
+    width: $site-width;
+    margin: 6rem auto 6rem auto;
+    border-bottom: solid 1px #dfdfdf;
+  }
+  &__title {
+    font-family: $font-family_title;
+    margin: $space_10l auto $space_10l auto;
+    font-size: $font-size_3l;
+    letter-spacing: $space_s;
+    text-align: center;
+    @include mq() {
+      width: 90vw;
+      margin: $space_6l auto $space_5l auto;
+    }
+  }
+}
+
+// Profile
+.profile {
+  &__container {
+    width: 60vw;
+    margin: 0 auto;
+    @include mq(md) {
+      width: 90vw;
+      margin: $space_6l auto $space_5l auto;
+
+      @include mq(lg) {
+        .txt-hide {
+          display: none;
+        }
+      }
+    }
+  }
+  .txt-hide {
+    font-size: $font-size_m;
+  }
+  &__img {
+    text-align: center;
+    & img {
+      border-radius: 50%;
+    }
+  }
+  &__group {
+    display: flex;
+    flex-direction: column;
+    font-size: $font-size_l;
+  }
+  &__unit {
+    display: flex;
+    height: $space_4l;
+    line-height: $space_4l;
+    text-align: center;
+    margin-top: $space_3l;
+  }
+  &__label {
+    background-color: $bgColor_label;
+    width: $site-width_prof;
+    margin-right: $space_xxl;
+    @include mq() {
+      width: 100px;
+      margin-right: $space_xxl;
+      .txt-hide {
+        display: none;
+      }
+    }
+  }
+
+  &__text {
+    // background-color: $bgColor_default;
+    line-height: 2.5rem;
+
+    margin-top: $space_3l;
+    @include mq() {
+      line-height: $space_3l;
+    }
+  }
+}
+
+// Skill
+.skill {
+  text-align: center;
+  margin: 0 auto;
+
+  @include mq() {
+    width: 90vw;
+  }
+  &__container {
+    margin-top: $space_9l;
+    margin: 0 auto;
+    width: 60vw;
+    @include mq(md) {
+      width: 90vw;
+    }
+  }
+  &__title {
+    font-size: $font-size_xxl;
+  }
+  &__group {
+    margin-top: $space_6l;
+    display: grid;
+    justify-content: space-around;
+    grid-template: "unit1 unit2 unit3 unit4 unit5 unit6" 1fr;
+    @include mq(xxl) {
+      grid-template:
+        "unit1 unit2 unit3" 1fr
+        "unit4 unit5 unit6" 1fr;
+    }
+    @include mq(sm) {
+      grid-template:
+        "unit1 unit2" 1fr
+        "unit3 unit4" 1fr
+        "unit5 unit6" 1fr;
+    }
+  }
+
+  &__unit {
+    width: $site-width_icon;
+    margin-bottom: $space_l;
+  }
+  &__icon {
+    width: 100%;
+    height: 35%;
+    // background-color: $bgColor_icon3;
+    border-radius: 50%;
+    margin: 0 auto;
+    & i {
+      font-size: $font-size_icon;
+      color: $font-color_icon;
+      line-height: $site-height_icon;
+    }
+  }
+  .bg-color1 {
+    background-color: $bgColor_icon1;
+  }
+  .bg-color2 {
+    background-color: $bgColor_icon2;
+  }
+  .bg-color3 {
+    background-color: $bgColor_icon3;
+  }
+  .bg-color4 {
+    background-color: $bgColor_icon4;
+  }
+  .bg-color5 {
+    background-color: $bgColor_icon5;
+  }
+  .bg-color6 {
+    background-color: $bgColor_icon6;
+  }
+  &__text-box {
+    margin-top: $space_xxl;
+  }
+  .text-box__heading {
+    height: $space_3l;
+    font-size: $font-size_l;
+    line-height: $space_3l;
+    background-color: $bgColor_label;
+    border-radius: 0.2rem;
+  }
+  .text-box__desc {
+    margin-top: $space_xl;
+    font-size: $font-size_m;
+    // letter-spacing: $space_ss;
+    line-height: $space_xl;
+    text-align: left;
+  }
+}
+
+// work
+.works {
+  &__container {
+    display: flex;
+    margin: 0 auto;
+    max-width: 800px;
+    @include mq(md) {
+      justify-content: center;
+      flex-wrap: wrap;
+      width: $site-width;
+    }
+  }
+  &__items {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+  }
+  &__item {
+    margin: 0 1rem 10% 1rem;
+    @include mq(md) {
+      margin-right: auto;
+      margin-left: auto;
+      margin-bottom: 10%;
+    }
+    & img {
+      width: 350px;
+      height: 200px;
+      cursor: pointer;
+      @include mq(md) {
+        width: 300px;
+        height: 170px;
+      }
+    }
+  }
+}
+
+// Contact
+.contact {
+  letter-spacing: $space_ss;
+
+  &__container {
+    width: $site-width_sub2;
+    margin: 0 auto;
+    @include mq(md) {
+      width: 90vw;
+    }
+  }
+  &__heading {
+    margin-bottom: $space_6l;
+  }
+  &__form {
+  }
+  &__form-label {
+    margin-top: $space_xxl;
+    display: block;
+    &--required {
+      background-color: $bgColor_required;
+      font-size: $font-size_s;
+      color: #fff;
+      padding: $space_s;
+      vertical-align: top;
+    }
+  }
+  &__form-input {
+    margin-top: $space_m;
+    display: block;
+    padding: $space_m;
+    font-size: $font-size_default;
+    width: $site-width_sub2;
+    box-sizing: border-box;
+    border: 1px solid #dcdcdc;
+    @include mq(md) {
+      width: 90vw;
+    }
+  }
+  &__form-alert {
+    color: $font-color_alert;
+    box-sizing: border-box;
+    display: block;
+    margin-top: $space_m;
+  }
+  &__form-count {
+    text-align: right;
+  }
+  &__form-textArea {
+    box-sizing: border-box;
+    resize: none;
+    display: block;
+    margin-top: $space_l;
+    width: $site-width_sub2;
+    height: $site-height_sub2;
+    font-size: $font-size_default;
+    box-sizing: border-box;
+    border: 1px solid #dcdcdc;
+    @include mq(md) {
+      width: 90vw;
+      height: 25vh;
+    }
+  }
+  &__form-btn {
+    margin: 0 auto;
+    margin-top: $space_xl;
+    margin-bottom: $space_3l;
+    display: block;
+    padding: $space_xl;
+    width: $site-width_btn;
+    font-size: $font-size_l;
+    background-color: $bgColor_label;
+    box-shadow: 1rem 1rem 1rem #dcdcdc;
+    border: none;
+    margin-top: 4rem;
+    margin-bottom: 6rem;
+    transition: all 0.5s;
+    @include mq(md) {
+      width: 80%;
+    }
+    &:hover {
+      transition: all 0.5s;
+      transform: translate(-3px, -3px);
+      box-shadow: 1.5rem 1.5rem 1.5rem #dcdcdc;
+    }
+  }
+}
+
+// フッター
+.footer {
+  font-family: $font-family_title;
+  text-align: center;
+  background-color: #fff;
+  height: 100vh;
+  box-sizing: border-box;
+  &__sns {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    position: relative;
+    align-items: center;
+  }
+  &__title {
+    position: absolute;
+    bottom: 50%;
+    & a {
+      font-size: $font-size_3l;
+      text-decoration: none;
+      color: $font-color_default;
+      cursor: pointer;
+    }
+  }
+  &__logo {
+    position: absolute;
+    bottom: 40%;
+    & a {
+      margin-top: $space_3l;
+      display: block;
+      font-size: $font-size_xxl;
+      color: rgba(29, 161, 242, 1);
+      cursor: pointer;
+    }
+  }
+  &__copy {
+    font-size: $font-size_l;
+    position: absolute;
+    bottom: 10%;
+    text-align: center;
+  }
+}
+
+// フェードイン
+.fadein {
+  opacity: 0;
+  transform: translate(0, 100px);
+  transition: all 1.7s;
+}
+
+.fadein.scrolled {
+  opacity: 1;
+  transform: translate(0, 0);
+}
+
+// アラート
+.has-error {
+  color: #ff0000;
+}
+.has-success {
+  color: #3be2ff;
+}
+
+// モーダル
+
+.modal__container {
+  display: flex;
+  padding: 4rem;
+  font-size: 13px;
+  @include mq(md) {
+    flex-direction: column;
+    padding: 1rem;
+  }
+}
+.modal__image {
+  margin: 0 auto;
+}
+.modal__img {
+  width: 270px;
+  margin-right: 2rem;
+  box-sizing: border-box;
+  cursor: pointer;
+  @include mq(md) {
+    width: 250px;
+    margin-right: 0;
+  }
+}
+.modal__label {
+  font-weight: 600;
+  margin-bottom: 0.7rem;
+  background-color: #dcdcdc;
+  padding: 0.5rem;
+  text-align: center;
+}
+.modal__info {
+  font-family: "ヒラギノ角ゴシック Pro";
+  box-sizing: border-box;
+  @include mq(md) {
+    padding-top: 1rem;
+  }
+}
+.modal__text {
+  padding-bottom: 1.5rem;
+  line-height: 1.3rem;
+}

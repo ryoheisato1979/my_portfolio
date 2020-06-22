@@ -1,0 +1,737 @@
+@charset "UTF-8";
+body {
+  font-family: "ヒラギノ角ゴシック Pro", "Average", "Caladea", "Hiragino Kaku Gothic ProN", Helvetica, Quicksand, 游ゴシック体, "Yu Gothic", YuGothic, "ヒラギノ角ゴシック Pro", "Hiragino Kaku Gothic Pro", メイリオ, Meiryo, Osaka, "ＭＳ Ｐゴシック", "MS PGothic", sans-serif;
+  color: #212121;
+}
+
+.header {
+  font-family: "Josefin Slab", "Jura";
+  position: fixed;
+  z-index: 1;
+  height: 4rem;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  background-color: rgba(255, 255, 255, 0.2);
+  padding: 0 10% 0 10%;
+  width: 100vw;
+}
+
+.header__title {
+  font-size: 2rem;
+  text-shadow: 0 0 20px #ffe2af;
+  -webkit-transition: all 2s;
+  transition: all 2s;
+}
+
+.header__title:hover {
+  color: #ffe2af;
+  -webkit-transition: all 2s;
+  transition: all 2s;
+}
+
+.header.active {
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+  -webkit-transform: translateX(-100%);
+          transform: translateX(-100%);
+  z-index: 2;
+}
+
+@media screen and (max-width: 768px) {
+  .nav {
+    display: block;
+    position: absolute;
+    top: 0;
+    right: -100%;
+    background: rgba(255, 255, 255, 0.85);
+    width: 100%;
+    height: 100vh;
+    padding-top: 50px;
+    -webkit-transition: 0.5s;
+    transition: 0.5s;
+  }
+  .nav.active {
+    -webkit-transition: 0.5s;
+    transition: 0.5s;
+    -webkit-transform: translateX(-100%);
+            transform: translateX(-100%);
+    z-index: 2;
+  }
+  .nav.active2 {
+    -webkit-transition: 0.5s;
+    transition: 0.5s;
+    -webkit-transform: translateX(100%);
+            transform: translateX(100%);
+    z-index: 2;
+  }
+}
+
+.nav__menu {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+@media screen and (max-width: 768px) {
+  .nav__menu {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    margin-top: 3.125rem;
+    line-height: 5rem;
+  }
+}
+
+.nav__menu-item {
+  margin-right: 3.125rem;
+}
+
+.nav__menu-link {
+  -webkit-font-smoothing: initial;
+  text-decoration: none;
+  color: #212121;
+  font-size: 0.875rem;
+}
+
+.nav__menu-link:hover {
+  color: #dcdcdc;
+  -webkit-transition: all 0.5s;
+  transition: all 0.5s;
+}
+
+.menu-trigger {
+  display: none;
+  -webkit-transition: all 0.4s;
+  transition: all 0.4s;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  position: relative;
+  width: 40px;
+  height: 32px;
+  z-index: 3;
+}
+
+@media screen and (max-width: 768px) {
+  .menu-trigger {
+    display: inline-block;
+  }
+}
+
+.menu-trigger__barger {
+  display: inline-block;
+  -webkit-transition: all 0.4s;
+  transition: all 0.4s;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  position: absolute;
+  left: 0;
+  width: 100%;
+  height: 4px;
+  background-color: #212121;
+  border-radius: 4px;
+}
+
+.menu-trigger__barger:nth-of-type(1) {
+  top: 0;
+}
+
+.menu-trigger__barger:nth-of-type(2) {
+  top: 14px;
+}
+
+.menu-trigger__barger:nth-of-type(3) {
+  bottom: 0;
+}
+
+.menu-trigger.active span:nth-of-type(1) {
+  -webkit-transform: translateY(12px) rotate(-45deg);
+          transform: translateY(12px) rotate(-45deg);
+}
+
+.menu-trigger.active span:nth-of-type(2) {
+  opacity: 0;
+}
+
+.menu-trigger.active span:nth-of-type(3) {
+  -webkit-transform: translateY(-15px) rotate(45deg);
+          transform: translateY(-15px) rotate(45deg);
+}
+
+.main {
+  margin: 0 auto;
+}
+
+.hero {
+  font-family: "Josefin Slab", "Jura";
+  background-image: url("../img/book-731199_1920.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 100vw;
+  height: 100vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.hero__text {
+  text-align: center;
+  font-size: 1.75rem;
+  text-shadow: 0 0 1rem white;
+}
+
+.hero__title {
+  margin-top: 2rem;
+  font-size: 5rem;
+  text-shadow: 0 0 1rem #ffe5a2;
+  -webkit-transition: all 3s;
+  transition: all 3s;
+}
+
+.hero__title:hover {
+  color: #ffe2af;
+  -webkit-transition: all 2s;
+  transition: all 2s;
+}
+
+.hero__name {
+  margin-top: 2rem;
+  font-size: 1rem;
+}
+
+.section-title__border {
+  width: 90vw;
+  margin: 6rem auto 6rem auto;
+  border-bottom: solid 1px #dfdfdf;
+}
+
+.section-title__title {
+  font-family: "Josefin Slab", "Jura";
+  margin: 7rem auto 7rem auto;
+  font-size: 2rem;
+  letter-spacing: 0.3125rem;
+  text-align: center;
+}
+
+@media screen and (max-width: 1200px) {
+  .section-title__title {
+    width: 90vw;
+    margin: 4.375rem auto 3.75rem auto;
+  }
+}
+
+.profile__container {
+  width: 60vw;
+  margin: 0 auto;
+}
+
+@media screen and (max-width: 768px) {
+  .profile__container {
+    width: 90vw;
+    margin: 4.375rem auto 3.75rem auto;
+  }
+}
+
+@media screen and (max-width: 768px) and (max-width: 1000px) {
+  .profile__container .txt-hide {
+    display: none;
+  }
+}
+
+.profile .txt-hide {
+  font-size: 0.875rem;
+}
+
+.profile__img {
+  text-align: center;
+}
+
+.profile__img img {
+  border-radius: 50%;
+}
+
+.profile__group {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  font-size: 1.125rem;
+}
+
+.profile__unit {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  height: 3.125rem;
+  line-height: 3.125rem;
+  text-align: center;
+  margin-top: 2.5rem;
+}
+
+.profile__label {
+  background-color: #ededed;
+  width: 15rem;
+  margin-right: 1.75rem;
+}
+
+@media screen and (max-width: 1200px) {
+  .profile__label {
+    width: 100px;
+    margin-right: 1.75rem;
+  }
+  .profile__label .txt-hide {
+    display: none;
+  }
+}
+
+.profile__text {
+  line-height: 2.5rem;
+  margin-top: 2.5rem;
+}
+
+@media screen and (max-width: 1200px) {
+  .profile__text {
+    line-height: 2.5rem;
+  }
+}
+
+.skill {
+  text-align: center;
+  margin: 0 auto;
+}
+
+@media screen and (max-width: 1200px) {
+  .skill {
+    width: 90vw;
+  }
+}
+
+.skill__container {
+  margin-top: 6.25rem;
+  margin: 0 auto;
+  width: 60vw;
+}
+
+@media screen and (max-width: 768px) {
+  .skill__container {
+    width: 90vw;
+  }
+}
+
+.skill__title {
+  font-size: 1.75rem;
+}
+
+.skill__group {
+  margin-top: 4.375rem;
+  display: -ms-grid;
+  display: grid;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  grid-template: "unit1 unit2 unit3 unit4 unit5 unit6" 1fr;
+}
+
+@media screen and (max-width: 1400px) {
+  .skill__group {
+    grid-template: "unit1 unit2 unit3" 1fr "unit4 unit5 unit6" 1fr;
+  }
+}
+
+@media screen and (max-width: 414px) {
+  .skill__group {
+    grid-template: "unit1 unit2" 1fr "unit3 unit4" 1fr "unit5 unit6" 1fr;
+  }
+}
+
+.skill__unit {
+  width: 7rem;
+  margin-bottom: 0.9375rem;
+}
+
+.skill__icon {
+  width: 100%;
+  height: 35%;
+  border-radius: 50%;
+  margin: 0 auto;
+}
+
+.skill__icon i {
+  font-size: 5.5em;
+  color: white;
+  line-height: 7rem;
+}
+
+.skill .bg-color1 {
+  background-color: #e0b2e0;
+}
+
+.skill .bg-color2 {
+  background-color: #ffee8b;
+}
+
+.skill .bg-color3 {
+  background-color: #ceabd8;
+}
+
+.skill .bg-color4 {
+  background-color: #a2c2d4;
+}
+
+.skill .bg-color5 {
+  background-color: #ffd06b;
+}
+
+.skill .bg-color6 {
+  background-color: #ff6b6b;
+}
+
+.skill__text-box {
+  margin-top: 1.75rem;
+}
+
+.skill .text-box__heading {
+  height: 2.5rem;
+  font-size: 1.125rem;
+  line-height: 2.5rem;
+  background-color: #ededed;
+  border-radius: 0.2rem;
+}
+
+.skill .text-box__desc {
+  margin-top: 1.25rem;
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+  text-align: left;
+}
+
+.works__container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin: 0 auto;
+  max-width: 800px;
+}
+
+@media screen and (max-width: 768px) {
+  .works__container {
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    width: 90vw;
+  }
+}
+
+.works__items {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+.works__item {
+  margin: 0 1rem 10% 1rem;
+}
+
+@media screen and (max-width: 768px) {
+  .works__item {
+    margin-right: auto;
+    margin-left: auto;
+    margin-bottom: 10%;
+  }
+}
+
+.works__item img {
+  width: 350px;
+  height: 200px;
+  cursor: pointer;
+}
+
+@media screen and (max-width: 768px) {
+  .works__item img {
+    width: 300px;
+    height: 170px;
+  }
+}
+
+.contact {
+  letter-spacing: 0.1875rem;
+}
+
+.contact__container {
+  width: 40vw;
+  margin: 0 auto;
+}
+
+@media screen and (max-width: 768px) {
+  .contact__container {
+    width: 90vw;
+  }
+}
+
+.contact__heading {
+  margin-bottom: 4.375rem;
+}
+
+.contact__form-label {
+  margin-top: 1.75rem;
+  display: block;
+}
+
+.contact__form-label--required {
+  background-color: #ff0000;
+  font-size: 0.75rem;
+  color: #fff;
+  padding: 0.3125rem;
+  vertical-align: top;
+}
+
+.contact__form-input {
+  margin-top: 0.625rem;
+  display: block;
+  padding: 0.625rem;
+  font-size: 1rem;
+  width: 40vw;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  border: 1px solid #dcdcdc;
+}
+
+@media screen and (max-width: 768px) {
+  .contact__form-input {
+    width: 90vw;
+  }
+}
+
+.contact__form-alert {
+  color: red;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  display: block;
+  margin-top: 0.625rem;
+}
+
+.contact__form-count {
+  text-align: right;
+}
+
+.contact__form-textArea {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  resize: none;
+  display: block;
+  margin-top: 0.9375rem;
+  width: 40vw;
+  height: 15vw;
+  font-size: 1rem;
+  box-sizing: border-box;
+  border: 1px solid #dcdcdc;
+}
+
+@media screen and (max-width: 768px) {
+  .contact__form-textArea {
+    width: 90vw;
+    height: 25vh;
+  }
+}
+
+.contact__form-btn {
+  margin: 0 auto;
+  margin-top: 1.25rem;
+  margin-bottom: 2.5rem;
+  display: block;
+  padding: 1.25rem;
+  width: 25vw;
+  font-size: 1.125rem;
+  background-color: #ededed;
+  -webkit-box-shadow: 1rem 1rem 1rem #dcdcdc;
+          box-shadow: 1rem 1rem 1rem #dcdcdc;
+  border: none;
+  margin-top: 4rem;
+  margin-bottom: 6rem;
+  -webkit-transition: all 0.5s;
+  transition: all 0.5s;
+}
+
+@media screen and (max-width: 768px) {
+  .contact__form-btn {
+    width: 80%;
+  }
+}
+
+.contact__form-btn:hover {
+  -webkit-transition: all 0.5s;
+  transition: all 0.5s;
+  -webkit-transform: translate(-3px, -3px);
+          transform: translate(-3px, -3px);
+  -webkit-box-shadow: 1.5rem 1.5rem 1.5rem #dcdcdc;
+          box-shadow: 1.5rem 1.5rem 1.5rem #dcdcdc;
+}
+
+.footer {
+  font-family: "Josefin Slab", "Jura";
+  text-align: center;
+  background-color: #fff;
+  height: 100vh;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+.footer__sns {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  min-height: 100vh;
+  position: relative;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.footer__title {
+  position: absolute;
+  bottom: 50%;
+}
+
+.footer__title a {
+  font-size: 2rem;
+  text-decoration: none;
+  color: #212121;
+  cursor: pointer;
+}
+
+.footer__logo {
+  position: absolute;
+  bottom: 40%;
+}
+
+.footer__logo a {
+  margin-top: 2.5rem;
+  display: block;
+  font-size: 1.75rem;
+  color: #1da1f2;
+  cursor: pointer;
+}
+
+.footer__copy {
+  font-size: 1.125rem;
+  position: absolute;
+  bottom: 10%;
+  text-align: center;
+}
+
+.fadein {
+  opacity: 0;
+  -webkit-transform: translate(0, 100px);
+          transform: translate(0, 100px);
+  -webkit-transition: all 1.7s;
+  transition: all 1.7s;
+}
+
+.fadein.scrolled {
+  opacity: 1;
+  -webkit-transform: translate(0, 0);
+          transform: translate(0, 0);
+}
+
+.has-error {
+  color: #ff0000;
+}
+
+.has-success {
+  color: #3be2ff;
+}
+
+.modal__container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  padding: 4rem;
+  font-size: 13px;
+}
+
+@media screen and (max-width: 768px) {
+  .modal__container {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    padding: 1rem;
+  }
+}
+
+.modal__image {
+  margin: 0 auto;
+}
+
+.modal__img {
+  width: 270px;
+  margin-right: 2rem;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  cursor: pointer;
+}
+
+@media screen and (max-width: 768px) {
+  .modal__img {
+    width: 250px;
+    margin-right: 0;
+  }
+}
+
+.modal__label {
+  font-weight: 600;
+  margin-bottom: 0.7rem;
+  background-color: #dcdcdc;
+  padding: 0.5rem;
+  text-align: center;
+}
+
+.modal__info {
+  font-family: "ヒラギノ角ゴシック Pro";
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+@media screen and (max-width: 768px) {
+  .modal__info {
+    padding-top: 1rem;
+  }
+}
+
+.modal__text {
+  padding-bottom: 1.5rem;
+  line-height: 1.3rem;
+}
+/*# sourceMappingURL=style.css.map */
